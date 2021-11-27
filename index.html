@@ -13,14 +13,14 @@
     <title>OpenLayers example</title>
   </head>
   <body>
-    <h2>Prueba</h2>
+    <h2>Prueba2</h2>
     <div id="map" class="map"></div>
     <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
         layers: [
           new ol.layer.Tile({
-            source: new ol.source.proyecto3.xml()
+            source: new ol.source.XYZ({url: proyecto3.xml})
           })
         ],
         view: new ol.View({
