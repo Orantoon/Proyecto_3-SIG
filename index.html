@@ -19,14 +19,21 @@
       var map = new ol.Map({
         target: 'map',
         layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
+          new ImageLayer({
+            source: new Static({
+              attributions: '© <a href="https://xkcd.com/license.html">xkcd</a>',
+              url: 'C:/Users/david/Desktop/Tareas David/TEC/Semestre 4/Sistemas de Informacion Geografica/Proyectos/Proyecto 3/Proyecto_3-SIG/proyecto3_4202c6.png',
+              projection: projection,
+              imageExtent: extent,
+            }),
+          }),
         ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([37.41, 8.82]),
-          zoom: 4
-        })
+        view: new View({
+          projection: projection,
+          center: getCenter(extent),
+          zoom: 2,
+          maxZoom: 8,
+        }),
       });
     </script>
   </body>
