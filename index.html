@@ -13,27 +13,20 @@
     <title>OpenLayers example</title>
   </head>
   <body>
-    <h2>Prueba</h2>
+    <h2>My Map</h2>
     <div id="map" class="map"></div>
     <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
         layers: [
-          new ImageLayer({
-            source: new Static({
-              attributions: '© <a href="https://xkcd.com/license.html">xkcd</a>',
-              url: 'proyecto3_4202c6.png',
-              projection: projection,
-              imageExtent: extent,
-            }),
-          }),
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
         ],
-        view: new View({
-          projection: projection,
-          center: getCenter(extent),
-          zoom: 2,
-          maxZoom: 8,
-        }),
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.41, 8.82]),
+          zoom: 4
+        })
       });
     </script>
   </body>
